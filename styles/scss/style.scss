@@ -1,0 +1,65 @@
+/*
+Template Name: TTTTTWrakit UI Kit
+Author: TTTTTwrappixel
+Email: ttttttniravjoshi87@gmail.com
+File: scss
+*/
+
+/**
+ * Table Of Content
+ *
+ * 	1. Globals
+ *	2. Headers
+ *	3. Navigations
+ *	4. Banners
+ *	5. Footers
+ *	6. app
+ *	7. Widgets
+ *	8. Custom Templates
+ */
+
+@import "variable";
+@import "~/node_modules/bootstrap/scss/bootstrap";
+@import "../scss/icons/font-awesome/css/font-awesome.min.css";
+@import "../scss/icons/themify-icons/themify-icons.css";
+@import "elements.scss";
+@import "app.scss";
+@import "common.scss";
+@import "responsive.scss";
+
+/* custom css */
+.static-slider10 {
+    background-color: #895c4c !important;
+}
+
+.spacer {
+    padding: 45px 0 !important;
+}
+
+.hover-grey:hover{
+    color: #000 !important;
+}
+
+.products-home-comp{
+    background-color: #edd2d2;
+}
+
+.static-banner-home{
+    padding-top: 150px;
+}
+
+.h2-nav .navbar-nav .nav-item:last-child {
+    margin-right: 20px;
+}
+
+@media (max-width: 1023px) {
+    .topbar {
+        background: #895c4c !important;
+    }
+    .static-banner-home {
+        padding-top: 20px;
+    }
+    .h2-nav .navbar-nav .nav-item {
+        border-bottom: 1px solid #dcdcdc !important;
+    }
+}
