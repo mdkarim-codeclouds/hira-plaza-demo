@@ -1,18 +1,15 @@
 import Head from "next/head";
-import CustomComponents from "../components/custom/Custom-components";
+import HomeComponents from "../components/home/main";
 
 export default function Home() {
   return (
     <div>
       <Head>
-        <title>NextJs UI kit | Free UI kit built with bootstrap</title>
-        <meta
-          name="description"
-          content="NextJs UI kit | Free UI kit built with bootstrap"
-        />
+        <title>Hira Plaza | Home</title>
+        <meta name="description" content="Hira Plaza | Home" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <CustomComponents />
+      <HomeComponents />
     </div>
   );
 }

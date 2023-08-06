@@ -90,7 +90,7 @@ const HeaderModified = () => {
       <div className="header1 po-relative">
         <Container>
           <Navbar className="navbar-expand-lg h2-nav">
-            <NavbarBrand href="#">
+            <NavbarBrand href="/">
               <Image src={logo3} alt="wrapkit" width={140} height={71} />
             </NavbarBrand>
             <NavbarToggler onClick={toggle}>
@@ -99,19 +99,29 @@ const HeaderModified = () => {
             <Collapse isOpen={isOpen} navbar id="header1">
               <Nav navbar className="ml-auto mt-2 mt-lg-0">
                 <NavItem className="active">
-                  <NavLink className="hover-grey" href="/">Home</NavLink>
+                  <Link href="/">
+                    <a className="text-white hover-grey nav-link" onClick={toggle}>Home</a>
+                  </Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="hover-grey" href="#products">Products</NavLink>
+                  <Link href="/#products">
+                    <a className="text-white hover-grey nav-link" onClick={toggle}>Products</a>
+                  </Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="hover-grey" href="#about-us">About Us</NavLink>
+                  <Link href="/aboutus">
+                    <a className="text-white hover-grey nav-link" onClick={toggle}>About Us</a>
+                  </Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="hover-grey" href="#contact-us">Contact Us</NavLink>
+                  <Link href="/#contact-us">
+                    <a className="text-white hover-grey nav-link" onClick={toggle}>Contact Us</a>
+                  </Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="hover-grey" href="#contact-us">Inquiry</NavLink>
+                  <Link href="/#contact-us">
+                    <a className="text-white hover-grey nav-link" onClick={toggle}>Inquiry</a>
+                  </Link>
                 </NavItem>
               </Nav>
             </Collapse>
