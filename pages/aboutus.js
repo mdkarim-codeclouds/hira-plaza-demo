@@ -7,7 +7,6 @@ export default function Home() {
       <Head>
         <title>Hira Plaza | About Us</title>
         <meta name="description" content="Hira Plaza | About Us" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <AboutUsComponents />
     </div>

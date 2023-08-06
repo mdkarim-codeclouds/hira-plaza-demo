@@ -7,11 +7,7 @@ const ErrorPage = () => {
     <div className="static-slider-head">
       <Head>
         <title>404 - Page not Found</title>
-        <meta
-          name="description"
-          content="The page you are looking for is not found go back to the homepage"
-        />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="The page you are looking for is not found go back to the homepage" />
       </Head>
       <Container>
         <Row className="justify-content-center">

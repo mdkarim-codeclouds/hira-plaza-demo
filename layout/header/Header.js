@@ -114,7 +114,7 @@ const HeaderModified = () => {
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link href="/#contact-us">
+                  <Link href="/contactus">
                     <a className="text-white hover-grey nav-link" onClick={toggle}>Contact Us</a>
                   </Link>
                 </NavItem>
