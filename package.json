@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "cross-env NODE_OPTIONS='--openssl-legacy-provider --inspect' next start",
+    "build": "cross-env NODE_OPTIONS='--openssl-legacy-provider --inspect' next build",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
