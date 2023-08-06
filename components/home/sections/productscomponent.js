@@ -1,6 +1,7 @@
 /* eslint-disable */
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
+import React from "react"; 
 import { Card, CardBody, Col, Container, Row } from "reactstrap";
 import img5 from "../../../assets/images/hp/279232246_Waterway 18-4-22 5.png";
 import img3 from "../../../assets/images/hp/309922324_Waterway 18-4-22 3.jpg";
@@ -21,91 +22,115 @@ const ProductsComponent = () => {
           </Row>
           <Row className="m-t-40">
             <Col md="4">
-              <Card className="card-shadow">
-                <a href="#" className="img-ho">
-                  <Image
-                    className="card-img-top"
-                    src={img1}
-                    alt="wrappixel kit"
-                  />
+              <Link href="/product/t1">
+                <a className="product-card">
+                  <Card className="card-shadow cursor-pointer">
+                    <div className="img-ho">
+                      <Image
+                        className="card-img-top"
+                        src={img1}
+                        alt="wrappixel kit"
+                      />
+                    </div>
+                    <CardBody>
+                      <h5 className="font-medium m-b-0">
+                        Tap type 1
+                      </h5>
+                    </CardBody>
+                  </Card>
                 </a>
-                <CardBody>
-                  <h5 className="font-medium m-b-0">
-                    Tap type 1
-                  </h5>
-                </CardBody>
-              </Card>
+              </Link>
             </Col>
             <Col md="4">
-              <Card className="card-shadow">
-                <a href="#" className="img-ho">
-                  <Image
-                    className="card-img-top"
-                    src={img2}
-                    alt="wrappixel kit"
-                  />
+              <Link href="/product/t2">
+                <a className="product-card">
+                  <Card className="card-shadow cursor-pointer">
+                    <div className="img-ho">
+                      <Image
+                        className="card-img-top"
+                        src={img2}
+                        alt="wrappixel kit"
+                      />
+                    </div>
+                    <CardBody>
+                      <h5 className="font-medium m-b-0">Tap type 2</h5>
+                    </CardBody>
+                  </Card>
                 </a>
-                <CardBody>
-                  <h5 className="font-medium m-b-0">Tap type 2</h5>
-                </CardBody>
-              </Card>
+              </Link>
             </Col>
             <Col md="4">
-              <Card className="card-shadow">
-                <a href="#" className="img-ho">
-                  <Image
-                    className="card-img-top"
-                    src={img3}
-                    alt="wrappixel kit"
-                  />
+              <Link href="/product/t3">
+                <a className="product-card">
+                  <Card className="card-shadow cursor-pointer">
+                    <div className="img-ho">
+                      <Image
+                        className="card-img-top"
+                        src={img3}
+                        alt="wrappixel kit"
+                      />
+                    </div>
+                    <CardBody>
+                      <h5 className="font-medium m-b-0">Tap type 3</h5>
+                    </CardBody>
+                  </Card>
                 </a>
-                <CardBody>
-                  <h5 className="font-medium m-b-0">Tap type 3</h5>
-                </CardBody>
-              </Card>
+              </Link>
             </Col>
             <Col md="4">
-              <Card className="card-shadow">
-                <a href="#" className="img-ho">
-                  <Image
-                    className="card-img-top"
-                    src={img4}
-                    alt="wrappixel kit"
-                  />
+              <Link href="/product/t4">
+                <a className="product-card">
+                  <Card className="card-shadow cursor-pointer">
+                    <div className="img-ho">
+                      <Image
+                        className="card-img-top"
+                        src={img4}
+                        alt="wrappixel kit"
+                      />
+                    </div>
+                    <CardBody>
+                      <h5 className="font-medium m-b-0">Tap type 4</h5>
+                    </CardBody>
+                  </Card>
                 </a>
-                <CardBody>
-                  <h5 className="font-medium m-b-0">Tap type 4</h5>
-                </CardBody>
-              </Card>
+              </Link>
             </Col>
             <Col md="4">
-              <Card className="card-shadow">
-                <a href="#" className="img-ho">
-                  <Image
-                    className="card-img-top"
-                    src={img5}
-                    alt="wrappixel kit"
-                  />
+              <Link href="/product/t5">
+                <a className="product-card">
+                  <Card className="card-shadow cursor-pointer">
+                    <div className="img-ho">
+                      <Image
+                        className="card-img-top"
+                        src={img5}
+                        alt="wrappixel kit"
+                      />
+                    </div>
+                    <CardBody>
+                      <h5 className="font-medium m-b-0">Tap type 5</h5>
+                    </CardBody>
+                  </Card>
                 </a>
-                <CardBody>
-                  <h5 className="font-medium m-b-0">Tap type 5</h5>
-                </CardBody>
-              </Card>
+              </Link>
             </Col>
             <Col md="4">
-              <Card className="card-shadow">
-                <a href="#" className="img-ho">
-                  <Image
-                    className="card-img-top"
-                    src={img6}
-                    alt="wrappixel kit"
-                  />
+              <Link href="/product/t6">
+                <a className="product-card">
+                  <Card className="card-shadow cursor-pointer">
+                    <div className="img-ho">
+                      <Image
+                        className="card-img-top"
+                        src={img6}
+                        alt="wrappixel kit"
+                      />
+                    </div>
+                    <CardBody>
+                      <h5 className="font-medium m-b-0">Tap type 6</h5>
+                      {/* <p className="m-b-0 font-14">Book Covers</p> */}
+                    </CardBody>
+                  </Card>
                 </a>
-                <CardBody>
-                  <h5 className="font-medium m-b-0">Tap type 6</h5>
-                  {/* <p className="m-b-0 font-14">Book Covers</p> */}
-                </CardBody>
-              </Card>
+              </Link>
             </Col>
           </Row>
         </Container>

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import AboutUsComponents from "../components/aboutus/main";
 
-export default function Home() {
+export default function AboutUs() {
   return (
     <div>
       <Head>

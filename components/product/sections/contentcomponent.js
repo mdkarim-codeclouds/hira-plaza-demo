@@ -4,6 +4,7 @@ import { Row, Col, Container } from "reactstrap";
 const ContentComponent = () => {
   return (
     <div>
+      <div className="blank-header"></div>
       <div className="static-slider3 contact-main-div">
         <Container>
           <Row className="justify-content-center">

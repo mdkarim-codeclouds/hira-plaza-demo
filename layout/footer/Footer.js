@@ -15,7 +15,7 @@ const Footer = () => {
           <Col lg="3" md="6" className="m-b-30">
             <h5 className="m-b-20 text-white">Phone</h5>
             <p>
-              Office : +91 9088877712
+              Office : <a className="link text-white" href="tel:9088877712">+91 9088877712</a>
             </p>
           </Col>
           <Col lg="3" md="6" className="m-b-30">
