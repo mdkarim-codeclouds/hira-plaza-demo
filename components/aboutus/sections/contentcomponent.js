@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from "react";
 import { Row, Col, Container } from "reactstrap";
-const BannerComponent = () => {
+const ContentComponent = () => {
   return (
     <div>
       <div className="static-slider3 article-main-div">
@@ -27,4 +27,4 @@ const BannerComponent = () => {
   );
 };
 
-export default BannerComponent;
+export default ContentComponent;

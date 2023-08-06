@@ -1,17 +1,14 @@
 import React from "react";
 
-// core components
-import Banner2 from "../banner/Banner2";
-
 // sections for this page
 import HeaderComponent from "./sections/headercomponent";
-import BannerComponent from "./sections/bannercomponent";
+import ContentComponent from "./sections/contentcomponent";
 
 const AboutUsComponents = () => {
   return (
     <div>
       <HeaderComponent />
-      <BannerComponent />
+      <ContentComponent />
     </div>
   );
 };
