@@ -22,7 +22,11 @@ const ContactComponent = () => {
     messageError: '',
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [showToast, setShowToast] = useState(false);
+  const [toastInfo, setToastInfo] = useState({
+    title: '',
+    text: '',
+    icon: '',
+  });
   const validateEmail = (email) => {
     return String(email)
       .toLowerCase()
@@ -81,13 +85,21 @@ const ContactComponent = () => {
         event.target.email.value = '';
         event.target.phone.value = '';
         event.target.message.value = '';
-        console.log(result, 1);
-      }else{
-        console.log(result, 2);
+        setToastInfo({
+          title: 'Success',
+          text: 'Query has been submitted. Thank you for visiting our site.',
+          icon: 'success',
+        });
+      } else {
+        setToastInfo({
+          title: 'Failure',
+          text: 'Something went wrong! Please try again later.',
+          icon: 'danger',
+        });
       }
       setIsLoading(false);
+      setTimeout(() => { setToastInfo({title:'',text:'',icon:''}) }, 4000);
     }
-
   }
   return (
     <div>
@@ -159,14 +171,12 @@ const ContactComponent = () => {
                               </span>
                             }
                           </Button>
-                          <Toast isOpen={showToast}>
-                            <ToastHeader toggle={() => { setShowToast(false) }}>
-                              Toast title
-                            </ToastHeader>
-                            <ToastBody>
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </ToastBody>
-                          </Toast>
+                          <div className="position-fixed p-3" style={{ zIndex: 99999999999, right: 0, top: 0 }}>
+                            <Toast isOpen={toastInfo.title != ''}>
+                              <ToastHeader toggle={() => { setToastInfo({title:'',text:'',icon:''}) }} icon={toastInfo.icon}>{toastInfo.title}</ToastHeader>
+                              <ToastBody>{toastInfo.text}</ToastBody>
+                            </Toast>
+                          </div>
                         </Col>
                       </Row>
                     </Form>
