@@ -345,7 +345,6 @@ export default async function handler(req, res) {
                                   <tr>
                                       <td>
                                           <div class="text" style="padding: 0 2.5em;">
-                                              <h2>New Query In By `+ req.body.name + `</h2>
                                               <p><strong>Name:</strong> `+ req.body.name + `</p>
                                               <p><strong>Email:</strong> `+ req.body.email + `</p>
                                               <p><strong>Phone:</strong> `+ req.body.phone + `</p>
@@ -378,12 +377,15 @@ export default async function handler(req, res) {
     },
     body: JSON.stringify(bodyData)
   };
-
   try {
     const response = await fetch(url, options);
     const data = await response.json();
-    res.status(200).json(data);
+    if (data.Message == 'OK') {
+      res.status(200).json({ 'status': 'success' });
+    }else{
+      res.status(500).json({ 'status': 'failure' });
+    }
   } catch (error) {
-    res.status(500).json(error);
+    res.status(500).json({ 'status': 'failure', 'exception': error });
   }
 }

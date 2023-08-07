@@ -8,6 +8,10 @@ import {
   Input,
   Row,
   FormFeedback,
+  Spinner,
+  Toast,
+  ToastHeader,
+  ToastBody,
 } from "reactstrap";
 
 const ContactComponent = () => {
@@ -17,6 +21,8 @@ const ContactComponent = () => {
     phoneError: '',
     messageError: '',
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [showToast, setShowToast] = useState(false);
   const validateEmail = (email) => {
     return String(email)
       .toLowerCase()
@@ -61,6 +67,7 @@ const ContactComponent = () => {
     }
     setFormValid({...form_valid});
     if (submit_ok) {
+      setIsLoading(true);
       const response = await fetch('/api/customerquery', {
         method: 'POST',
         headers: {
@@ -69,7 +76,16 @@ const ContactComponent = () => {
         body: JSON.stringify(data),
       });
       const result = await response.json();
-      console.log(result);
+      if (result.status == 'success') {
+        event.target.name.value = '';
+        event.target.email.value = '';
+        event.target.phone.value = '';
+        event.target.message.value = '';
+        console.log(result, 1);
+      }else{
+        console.log(result, 2);
+      }
+      setIsLoading(false);
     }
 
   }
@@ -127,13 +143,30 @@ const ContactComponent = () => {
                         <Col lg="12">
                           <Button
                             type="submit"
-                            className="btn btn-danger-gradiant m-t-20 btn-arrow"
+                            className="btn btn-primary m-t-20"
+                            disabled={isLoading}
                           >
-                            <span>
-                              {" "}
-                              Submit <i className="ti-arrow-right"></i>
-                            </span>
+                            {isLoading ?
+                              <span>
+                                <Spinner size="sm">
+                                  Loading...
+                                </Spinner>
+                                {' '}Sending
+                              </span> : 
+                              <span>
+                                {" "}
+                                Submit
+                              </span>
+                            }
                           </Button>
+                          <Toast isOpen={showToast}>
+                            <ToastHeader toggle={() => { setShowToast(false) }}>
+                              Toast title
+                            </ToastHeader>
+                            <ToastBody>
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </ToastBody>
+                          </Toast>
                         </Col>
                       </Row>
                     </Form>
