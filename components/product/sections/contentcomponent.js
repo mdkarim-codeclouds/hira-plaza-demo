@@ -62,7 +62,7 @@ const ContentComponent = () => {
 
   const handleQuantityChange = (event) => {
     let val = 1;
-    if (event.target.value > 0 || event.target.value < 101){
+    if (event.target.value > 0 && event.target.value < 101){
       val = event.target.value
     }
     setQuantityInput(val);
