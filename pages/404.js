@@ -4,7 +4,7 @@ import { Container, Row, Col, Button } from "reactstrap";
 
 const ErrorPage = () => {
   return (
-    <div className="static-slider-head">
+    <div className="static-slider-head page-404">
       <Head>
         <title>404 - Page not Found</title>
         <meta name="description" content="The page you are looking for is not found go back to the homepage" />
@@ -18,7 +18,7 @@ const ErrorPage = () => {
               <br /> please go back to homepage
             </h4>
             <Link href="/" passHref>
-              <Button className="btn btn-md m-t-30 btn-info-gradiant font-14">
+              <Button className="btn btn-md m-t-30 btn-light font-14">
                 Back to Homepage
               </Button>
             </Link>

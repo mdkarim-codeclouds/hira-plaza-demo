@@ -14,14 +14,10 @@ import img1 from "../../../assets/images/hp/product-demo.jpg";
 
 const ContentComponent = () => {
   const [activeTab, setActiveTab] = useState("1");
-
-  const openTab = (tabId) => {
-    setActiveTab(tabId);
-  };
   return (
     <div>
-      <section className="py-3 static-slider3 contact-main-div">
-        <Container className="px-2 my-5">
+      <section className="static-slider3 contact-main-div">
+        <Container>
           <Row className="gx-4 gx-lg-5 align-items-center">
             <Col md="6">
               <div className="img-ho">
@@ -58,12 +54,12 @@ const ContentComponent = () => {
             <Col md="12" className="product-tabs mt-4">
               <Nav tabs>
                 <NavItem>
-                  <NavLink className={activeTab == "1" ? 'active' : ''} onClick={() => openTab("1")}>
+                  <NavLink className={activeTab == "1" ? 'active' : ''} onClick={() => setActiveTab("1")}>
                     Description
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className={activeTab == "2" ? 'active' : '' } onClick={() => openTab("2")}>
+                  <NavLink className={activeTab == "2" ? 'active' : ''} onClick={() => setActiveTab("2")}>
                     Specifications
                   </NavLink>
                 </NavItem>

@@ -27,12 +27,12 @@ const Footer = () => {
           <Col lg="3" md="6">
             <h5 className="m-b-20 text-white">Social</h5>
             <div className="round-social light">
-              <Link href="#">
-                <a className="link">
+              <Link href="https://www.facebook.com/people/Hira-Plaza/pfbid0UvnVsS33L56P3vVGfutx3TYwDFtbN7v95jJS6CbKocSehFi9SXrhVGAVTeVJRPcxl/">
+                <a className="link" target="_blank">
                   <i className="fa fa-facebook"></i>
                 </a>
               </Link>
-              <Link href="#">
+              {/* <Link href="#">
                 <a className="link">
                   <i className="fa fa-twitter"></i>
                 </a>
@@ -51,7 +51,7 @@ const Footer = () => {
                 <a className="link">
                   <i className="fa fa-instagram"></i>
                 </a>
-              </Link>
+              </Link> */}
             </div>
           </Col>
         </Row>
