@@ -10,7 +10,7 @@ import {
   NavLink,
   Navbar,
   NavbarBrand,
-  NavbarToggler
+  NavbarToggler,
 } from "reactstrap";
 import logo3 from "../../assets/images/hp/logo.png";
 import logo from "../../assets/images/logos/white-text.png";
@@ -85,11 +85,18 @@ const HeaderModified = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
     if (window.innerWidth < 992) {
+      if (!isOpen) {
+        document.getElementById('main-wrapper').classList.add("mobile-menu-on");
+      } else {
+        document.getElementById('main-wrapper').classList.remove("mobile-menu-on");
+      }
       setIsOpen(!isOpen);
+    }else{
+      document.getElementById('main-wrapper').classList.remove("mobile-menu-on");
     }
   };
   return (
-    <div className="topbar" id="top">
+    <div className="topbar fixed-top" id="top">
       <div className="header1 po-relative">
         <Container>
           <Navbar className="navbar-expand-lg h2-nav">
@@ -107,7 +114,7 @@ const HeaderModified = () => {
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link href="/#products">
+                  <Link href="/products">
                     <a className="text-white hover-grey nav-link" onClick={toggle}>Products</a>
                   </Link>
                 </NavItem>

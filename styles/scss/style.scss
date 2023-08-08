@@ -135,10 +135,24 @@ input.add-to-cart-quantity{
 .static-slider-head.page-404{
     background-color: #895c4c !important;
 }
-
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+.topbar {
+    background: #895c4c !important;
+}
+.mobile-menu-on {
+    .page-wrapper, .footer4{
+        opacity: 0.4;
+    }
+}
 @media (max-width: 1023px) {
-    .topbar {
-        background: #895c4c !important;
+    .page-wrapper {
+        padding-top: 124px;
     }
     .static-banner-home, .banner-section {
         padding-top: 20px !important;
@@ -150,5 +164,9 @@ input.add-to-cart-quantity{
 @media (max-width: 991px) {
     .h2-nav .navbar-nav .nav-item {
         border-bottom: 1px solid #dcdcdc !important;
+    }
+    .h2-nav .navbar-nav .nav-item:last-child {
+        border-bottom: 0px !important;
+        padding-bottom: 15px;
     }
 }
