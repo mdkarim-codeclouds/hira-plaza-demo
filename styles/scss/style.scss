@@ -96,6 +96,37 @@ html {
     height: 118px;
 }
 
+.text-decoration-line-through {
+    text-decoration: line-through !important;
+}
+
+.add-to-cart-btn:hover {
+    color: #fff;
+    background-color: #2a2a2a;
+    border-color: #2a2a2a;
+}
+
+input.add-to-cart-quantity{
+    max-width: 4rem; 
+    display: inline-flex;
+    height: 52px;
+}
+
+.product-tabs ul.nav-tabs .nav-link{
+    padding: 1rem 1.5rem;
+}
+.product-tabs ul.nav-tabs .active.nav-link {
+    border: 0px;
+    border-bottom: 2px solid #000;
+}
+.product-tabs .tab-content .tab-pane{
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    min-height: 200px;
+}
+
 @media (max-width: 1023px) {
     .topbar {
         background: #895c4c !important;

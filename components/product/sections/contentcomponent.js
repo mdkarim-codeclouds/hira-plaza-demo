@@ -1,44 +1,97 @@
 /* eslint-disable */
-import React from "react";
-import { Row, Col, Container } from "reactstrap";
+import React, { useState } from "react";
+import Image from "next/image";
+import { 
+  Row, 
+  Col, 
+  Container, 
+  Input, 
+  Button,
+  Nav, NavItem, NavLink,
+  TabContent, TabPane
+} from "reactstrap";
+import img1 from "../../../assets/images/hp/product-demo.jpg";
+
 const ContentComponent = () => {
+  const [activeTab, setActiveTab] = useState("1");
+
+  const openTab = (tabId) => {
+    setActiveTab(tabId);
+  };
   return (
     <div>
-      <div className="blank-header"></div>
-      <div className="static-slider3 contact-main-div">
-        <Container>
-          <Row className="justify-content-center">
-            <Col md="7">
-              <div class="info-wrap w-100">
-                <div class="dbox w-100 d-flex align-items-center pb-4">
-                  <div class="icon d-flex align-items-center justify-content-center">
-                    <span class="fa fa-map-marker"></span>
-                  </div>
-                  <div class="text pl-3">
-                    <p><span>Address:</span> New Rander Road, Adajan Patiya, Surat-395005, Gujarat, India</p>
-                  </div>
-                </div>
-                <div class="dbox w-100 d-flex align-items-center pb-4">
-                  <div class="icon d-flex align-items-center justify-content-center">
-                    <span class="fa fa-phone"></span>
-                  </div>
-                  <div class="text pl-3">
-                    <p><span>Phone:</span> <a href="tel:9088877712">+91 9088877712</a></p>
-                  </div>
-                </div>
-                <div class="dbox w-100 d-flex align-items-center pb-4">
-                  <div class="icon d-flex align-items-center justify-content-center">
-                    <span class="fa fa-paper-plane"></span>
-                  </div>
-                  <div class="text pl-3">
-                    <p><span>Email:</span> <a href="mailto:infohiraplaza@gmail.com">infohiraplaza@gmail.com</a></p>
-                  </div>
-                </div>
+      <section className="py-3 static-slider3 contact-main-div">
+        <Container className="px-2 my-5">
+          <Row className="gx-4 gx-lg-5 align-items-center">
+            <Col md="6">
+              <div className="img-ho">
+                <Image
+                  className="card-img-top"
+                  src={img1}
+                  alt="wrappixel kit"
+                />
               </div>
+            </Col>
+            <Col md="6">
+              <div className="small mb-1">SKU: BST-498</div>
+              <h1 className="fw-bolder">Shop item template</h1>
+              <div className="fs-5 mb-3">
+                <span className="text-decoration-line-through">$45.00</span>
+                <span className="text-dark ml-2">$40.00</span>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
+              <div className="d-flex justify-content-center">
+                <Input
+                  id="quantity"
+                  name="quantity"
+                  placeholder="Quantity"
+                  type="number" 
+                  className="text-center add-to-cart-quantity"
+                  value={1}
+                />
+                <Button outline className="add-to-cart-btn ml-2">
+                  <i className="fa fa-cart-arrow-down mr-2"></i>
+                  Add To Cart
+                </Button>
+              </div>
+            </Col>
+            <Col md="12" className="product-tabs mt-4">
+              <Nav tabs>
+                <NavItem>
+                  <NavLink className={activeTab == "1" ? 'active' : ''} onClick={() => openTab("1")}>
+                    Description
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className={activeTab == "2" ? 'active' : '' } onClick={() => openTab("2")}>
+                    Specifications
+                  </NavLink>
+                </NavItem>
+              </Nav>
+              <TabContent activeTab={activeTab}>
+                <TabPane tabId="1">
+                  <Row>
+                    <Col sm="12">
+                      <h4>
+                        Tab 1 Contents
+                      </h4>
+                    </Col>
+                  </Row>
+                </TabPane>
+                <TabPane tabId="2">
+                  <Row>
+                    <Col sm="12">
+                      <h4>
+                        Tab 2 Contents
+                      </h4>
+                    </Col>
+                  </Row>
+                </TabPane>
+              </TabContent>
             </Col>
           </Row>
         </Container>
-      </div>
+      </section>
     </div>
   );
 };
