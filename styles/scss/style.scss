@@ -132,6 +132,9 @@ input.add-to-cart-quantity{
 .contact-main-div .card .card-header{
     color: #1f2126;
 }
+.single-product-main-div{
+    padding: 20px 0px !important;
+}
 .static-slider-head.page-404{
     background-color: #895c4c !important;
 }
@@ -154,8 +157,13 @@ input.add-to-cart-quantity{
     .page-wrapper {
         padding-top: 117px;
     }
-    .static-banner-home, .banner-section {
+    .static-banner-home {
         padding-top: 20px !important;
+        padding-bottom: 27px !important;
+    }
+    .banner-section {
+        padding-top: 0px !important;
+        padding-bottom: 7px !important;
     }
     .article-para {
         font-size: 15px !important;

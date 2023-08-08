@@ -69,7 +69,7 @@ const ContentComponent = () => {
   }
   return (
     <div>
-      <section className="static-slider3 contact-main-div">
+      <section className="static-slider3 single-product-main-div">
         <Container>
           <Row className="gx-4 gx-lg-5 align-items-center">
             <Col md="6">
