@@ -83,8 +83,11 @@ const Header = () => {
 
 const HeaderModified = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter();
-  const toggle = () => setIsOpen(!isOpen);
+  const toggle = () => {
+    if (window.innerWidth < 992) {
+      setIsOpen(!isOpen);
+    }
+  };
   return (
     <div className="topbar" id="top">
       <div className="header1 po-relative">

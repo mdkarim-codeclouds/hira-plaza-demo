@@ -17,17 +17,21 @@ import img1 from "../../../assets/images/hp/787284022_Waterway 18-4-22 1.jpg";
 
 const items = [
   {
+    key: 0,
     src: img1
   },
   {
+    key: 1,
     src: img2
   },
   {
+    key: 2,
     src: img3
   }
 ];
 
 const ContentComponent = () => {
+  const [quantityInput, setQuantityInput] = useState(1);
   const [activeTab, setActiveTab] = useState("1");
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -55,6 +59,14 @@ const ContentComponent = () => {
       <Image src={item.src} alt={item.altText} />
     </CarouselItem>
   ));
+
+  const handleQuantityChange = (event) => {
+    let val = 1;
+    if (event.target.value > 0 || event.target.value < 101){
+      val = event.target.value
+    }
+    setQuantityInput(val);
+  }
   return (
     <div>
       <section className="static-slider3 contact-main-div">
@@ -85,7 +97,8 @@ const ContentComponent = () => {
                   placeholder="Quantity"
                   type="number" 
                   className="text-center add-to-cart-quantity"
-                  value={1}
+                  value={quantityInput}
+                  onChange={handleQuantityChange}
                 />
                 <Button outline className="add-to-cart-btn ml-2">
                   <i className="fa fa-cart-arrow-down mr-2"></i>

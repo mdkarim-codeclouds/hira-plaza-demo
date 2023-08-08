@@ -143,10 +143,12 @@ input.add-to-cart-quantity{
     .static-banner-home, .banner-section {
         padding-top: 20px !important;
     }
-    .h2-nav .navbar-nav .nav-item {
-        border-bottom: 1px solid #dcdcdc !important;
-    }
     .article-para {
         font-size: 15px !important;
+    }
+}
+@media (max-width: 991px) {
+    .h2-nav .navbar-nav .nav-item {
+        border-bottom: 1px solid #dcdcdc !important;
     }
 }
