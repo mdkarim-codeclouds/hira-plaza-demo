@@ -13,7 +13,7 @@ const HeaderComponent = () => {
         <Container>
           <Row className="justify-content-center">
             <Col md="7" className="text-center">
-              <h1 className="title font-bold text-white">Product</h1>
+              <h1 className="title font-bold text-white">Product / Tap Type 1</h1>
               <h6 className="subtitle text-white">
                 HIRA PLAZA INDUSTRIES
               </h6>

@@ -8,32 +8,74 @@ import {
   Input, 
   Button,
   Nav, NavItem, NavLink,
-  TabContent, TabPane
+  TabContent, TabPane,
+  Carousel, CarouselIndicators, CarouselItem
 } from "reactstrap";
-import img1 from "../../../assets/images/hp/product-demo.jpg";
+import img3 from "../../../assets/images/hp/309922324_Waterway 18-4-22 3.jpg";
+import img2 from "../../../assets/images/hp/679699910_Waterway 18-4-22 2.png";
+import img1 from "../../../assets/images/hp/787284022_Waterway 18-4-22 1.jpg";
+
+const items = [
+  {
+    src: img1
+  },
+  {
+    src: img2
+  },
+  {
+    src: img3
+  }
+];
 
 const ContentComponent = () => {
   const [activeTab, setActiveTab] = useState("1");
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
+  const next = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+    setActiveIndex(nextIndex);
+  };
+  const previous = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+    setActiveIndex(nextIndex);
+  };
+  const goToIndex = (newIndex) => {
+    if (animating) return;
+    setActiveIndex(newIndex);
+  };
+  const slides = items.map((item, i) => (
+    <CarouselItem
+      onExiting={() => setAnimating(true)}
+      onExited={() => setAnimating(false)}
+      key={i}
+    >
+      <Image src={item.src} alt={item.altText} />
+    </CarouselItem>
+  ));
   return (
     <div>
       <section className="static-slider3 contact-main-div">
         <Container>
           <Row className="gx-4 gx-lg-5 align-items-center">
             <Col md="6">
-              <div className="img-ho">
-                <Image
-                  className="card-img-top"
-                  src={img1}
-                  alt="wrappixel kit"
+              <Carousel activeIndex={activeIndex} next={next} previous={previous}>
+                <CarouselIndicators
+                  items={items}
+                  activeIndex={activeIndex}
+                  onClickHandler={goToIndex}
                 />
-              </div>
+                {slides}
+              </Carousel>
             </Col>
             <Col md="6">
-              <div className="small mb-1">SKU: BST-498</div>
-              <h1 className="fw-bolder">Shop item template</h1>
+              <div className="small mb-1">SKU: TAP-TYPE-1</div>
+              <h1 className="fw-bolder">Tap type 1</h1>
               <div className="fs-5 mb-3">
-                <span className="text-decoration-line-through">$45.00</span>
-                <span className="text-dark ml-2">$40.00</span>
+                <span className="text-decoration-line-through">&#8377;110.00</span>
+                <span className="text-dark ml-2">&#8377;99.00</span>
               </div>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
               <div className="d-flex mt-4">
@@ -68,18 +110,18 @@ const ContentComponent = () => {
                 <TabPane tabId="1">
                   <Row>
                     <Col sm="12">
-                      <h4>
-                        Tab 1 Contents
-                      </h4>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?
+                      </p>
                     </Col>
                   </Row>
                 </TabPane>
                 <TabPane tabId="2">
                   <Row>
                     <Col sm="12">
-                      <h4>
-                        Tab 2 Contents
-                      </h4>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?
+                      </p>
                     </Col>
                   </Row>
                 </TabPane>
