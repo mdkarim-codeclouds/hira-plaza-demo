@@ -85,60 +85,56 @@ const HeaderModified = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
     if (window.innerWidth < 992) {
-      if (!isOpen) {
-        document.getElementById('main-wrapper').classList.add("mobile-menu-on");
-      } else {
-        document.getElementById('main-wrapper').classList.remove("mobile-menu-on");
-      }
       setIsOpen(!isOpen);
-    }else{
-      document.getElementById('main-wrapper').classList.remove("mobile-menu-on");
     }
   };
   return (
-    <div className="topbar fixed-top" id="top">
-      <div className="header1 po-relative">
-        <Container>
-          <Navbar className="navbar-expand-lg h2-nav">
-            <NavbarBrand href="/">
-              <Image src={logo3} alt="wrapkit" width={140} height={71} />
-            </NavbarBrand>
-            <NavbarToggler onClick={toggle}>
-              <span className="ti-menu text-white"></span>
-            </NavbarToggler>
-            <Collapse isOpen={isOpen} navbar id="header1">
-              <Nav navbar className="ml-auto mt-2 mt-lg-0">
-                <NavItem className="active">
-                  <Link href="/">
-                    <a className="text-white hover-grey nav-link" onClick={toggle}>Home</a>
-                  </Link>
-                </NavItem>
-                <NavItem>
-                  <Link href="/products">
-                    <a className="text-white hover-grey nav-link" onClick={toggle}>Products</a>
-                  </Link>
-                </NavItem>
-                <NavItem>
-                  <Link href="/aboutus">
-                    <a className="text-white hover-grey nav-link" onClick={toggle}>About Us</a>
-                  </Link>
-                </NavItem>
-                <NavItem>
-                  <Link href="/contactus">
-                    <a className="text-white hover-grey nav-link" onClick={toggle}>Contact Us</a>
-                  </Link>
-                </NavItem>
-                <NavItem>
-                  <Link href="/#contact-us">
-                    <a className="text-white hover-grey nav-link" onClick={toggle}>Inquiry</a>
-                  </Link>
-                </NavItem>
-              </Nav>
-            </Collapse>
-          </Navbar>
-        </Container>
+    <>
+      {isOpen ? <div className="backdrop-show" onClick={toggle}></div> : ''}
+      <div className="topbar fixed-top" id="top">
+        <div className="header1 po-relative">
+          <Container>
+            <Navbar className="navbar-expand-lg h2-nav">
+              <NavbarBrand href="/">
+                <Image src={logo3} alt="wrapkit" width={140} height={71} />
+              </NavbarBrand>
+              <NavbarToggler onClick={toggle}>
+                <span className="ti-menu text-white"></span>
+              </NavbarToggler>
+              <Collapse isOpen={isOpen} navbar id="header1">
+                <Nav navbar className="ml-auto mt-2 mt-lg-0">
+                  <NavItem className="active">
+                    <Link href="/">
+                      <a className="text-white hover-grey nav-link" onClick={toggle}>Home</a>
+                    </Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link href="/products">
+                      <a className="text-white hover-grey nav-link" onClick={toggle}>Products</a>
+                    </Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link href="/aboutus">
+                      <a className="text-white hover-grey nav-link" onClick={toggle}>About Us</a>
+                    </Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link href="/contactus">
+                      <a className="text-white hover-grey nav-link" onClick={toggle}>Contact Us</a>
+                    </Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link href="/#contact-us">
+                      <a className="text-white hover-grey nav-link" onClick={toggle}>Inquiry</a>
+                    </Link>
+                  </NavItem>
+                </Nav>
+              </Collapse>
+            </Navbar>
+          </Container>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
